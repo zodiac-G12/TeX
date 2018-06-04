@@ -1,0 +1,152 @@
+\documentclass{msjproc}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage[dvipdfmx]{graphicx}
+
+\begin{document}
+	
+	\title{{\bf SECTION 2 MAPPING}}
+	\author{Zodiac Caulfield}{}
+	\maketitle
+	
+	\begin{description}
+		\item[\underline{{\large \bf 謝辞}}]
+			　{\bf
+					$$
+					前回の命題の証明に関して、
+					\bigcap_{i \in I} f (\bigcap_{i \in I} A_i)
+					\subset \bigcap_{i \in I} f (A_i)
+					$$
+					は,やっぱり自明でありました.お詫び申し上げます.
+				}
+	\end{description}
+
+	\begin{description}
+		\item[\underline{Prop 2.5.2}]　$f : X \to Y$ を写像とする.
+		\newline
+			　{\bf 1}. $A \subset X$ と $B \subset Y$ について,
+			$$f(A) \subset B \iff A \subset f^{-1}(B)$$
+			　{\bf 2}. $f$ による image について,{\bf (1) - (3)} が成り立つ.
+			\newline
+				　　{\bf (1)} $A \subset X$, $A \subset f^{-1}(f(A))$.
+				\newline
+				　　{\bf (2)} $A, A' \subset X, A \subset A' \Rightarrow f(A') \subset f(A)$.
+				\newline
+				　　{\bf (3)} $(A_i)_{i \in I} \in X, 
+				f(\bigcup_{i \in I} A_i) = \bigcup_{i \in I} f(A_i), 
+				f(\bigcap_{i \in I} A_i) \subset \bigcap_{i \in I} f(A_i)$.
+			\newline
+			　{\bf 3}. $f$ による inverse image について,{\bf (1) - (3)} が成り立つ.
+			\newline
+				　　{\bf (1)} $B \subset Y, f(f^{-1}(B)) = f(X) \cap B, 
+				f^{-1}(Y \setminus B) = X \setminus f^{-1}(B)$.
+				\newline
+				　　{\bf (2)} $B, B' \subset Y, B \subset B' \Rightarrow 
+				f^{-1}(B) \subset f^{-1}(B')$.
+				\newline
+				　　{\bf (3)} $(B_i)_{i \in I} \in Y, 
+				f^{-1}(\bigcup_{i \in I} B_i) = \bigcup_{i \in I} f^{-1}(B_i), 
+				f^{-1}(\bigcap_{i \in I} B_i) = \bigcap_{i \in I} f^{-1}(B_i)$.
+		\newline
+		\item[\underline{Proof.}]
+			　{\bf 1}. 
+	\end{description}
+
+	\begin{description}
+		\item[\underline{Definition2.}]
+		　A point p is called a cluster point of a directed 
+		family provided every open set about p intersects each element F of the family.
+		\newline
+		　(p を含む任意の開集合が, どの点族の要素 F とも共通部分を持つとき, 
+		p は有向点族の収積点という.)
+	\end{description}
+
+	\begin{description}
+		\item[\underline{Definition3.}]
+		　A directed family $\cal{F}$ converges to a point p 
+		if and only if every open set about p contains some element of the family.
+		\newline
+		　(有向点族 $\cal{F}$ が点 p に収束することと,  p を含む任意の開集合が
+		点族のある要素を含むことは同値.)
+		
+		\item[\underline{Proof.}]
+		　(十分条件):
+		有向点族の定義より, 有向点族の二つの要素の共通部分は, 
+		有向点族の要素として含む. また, それが点 p に収束するので, 
+		有向点族 $\cal{F}$ の要素 F を番号付けして表したときに, 
+		$\epsilon - N$ 論法的に考えて点 p に収束することを考えると, 
+		\newline\newline
+		\centerline{$\forall \epsilon > 0, \exists N \in \mathbb{N} 
+		\>\> s.t. \>\> \forall n \in \mathbb{N} \>\> n > N 
+		\Rightarrow \|F_n - p\| < \epsilon$}
+		\newline\newline
+		と表せる. また, p の $\epsilon$ 近傍を考えてやると, これも p を含む開集合である. 
+		先程の有向点族に関する収束の主張より, $F_n$ は p の $\epsilon$ 近傍に含まれる.
+		\newline
+		　(必要条件):
+		p を含む任意の開集合が点族のある要素を含むとすると, 
+		p の $\epsilon$ 近傍と共通部分を持つ点族の要素が存在することになる.
+		このことから, 有向点族が p に収束するといえる.
+		\newline　よってこの主張は正しい.\qed
+	\end{description}
+
+	\begin{description}
+		\item[\underline{Definition4.}]
+		　If $\cal{E}$ and $\cal{F}$ are directed families, 
+		then $\cal{E}$ is a (directed) underfamily of $\cal{F}$ provided each 
+		element of $\cal{F}$ contains some element of $\cal{E}$.
+		\newline
+		　($\cal{E}$ と $\cal{F}$ が有向点族で, $\cal{F}$ のどの要素も $\cal{E}$ 
+		のある要素を含むとき, $\cal{E}$ は $\cal{F}$ の (directed) underfamily
+		であるという.)
+	\end{description}
+
+	\begin{description}
+		\item[\underline{Exercises I\hspace{-.1em}I\hspace{-.1em}I}]
+			　
+			\begin{enumerate}\renewcommand{\labelenumi}{\arabic{enumi}.}
+				
+				\item
+				　A point p is a cluster point of a directed family $\cal{F}$ 
+				provided some underfamily of $\cal{F}$ converges to p.
+				\newline
+				　($\cal{F}$ のある underfamily が点 p に収束するという条件のもとで, 
+				p は有向点族 $\cal{F}$ の収積点である.)
+				\item[\underline{Proof.}]
+				　$\cal{F}$ のある underfamily が点 p に収束すると仮定すると, 
+				underfamily も 有向点族であるので, p を含む任意の開集合が点族の
+				ある要素を含む. p を含む任意の開集合が, どの要素 F とも
+				共通部分を持つような, ある点族を考えたとき, 
+				p は有向点族 $\cal{F}$ の集積点である.  \qed
+
+				\item
+				　A topological space X is a Hausdorff space if and only if 
+				each directed family of sets in X converges to at most one 
+				point in X.
+				\newline
+				　(位相空間 X がハウスドルフであることと, X の集合のどの有向点族も
+				X の高々一つの点に収束することは同値である.)
+				\item[\underline{Proof.}]
+				　(十分条件):
+				ハウスドルフ空間 X の異なる二点は, 交わらない近傍を持つ.
+				このとき, X の集合のどの有向点族も, 
+				X の二つ以上の点に収束すると仮定すると矛盾.
+				　(必要条件):
+				位相空間 X の集合のどの有向点族も X の高々一つの点に収束するとき, 
+				X の任意の異なる二点が互いに交わらない近傍を持つと言えるので, 
+				X はハウスドルフになる.
+				\newline
+				　よってこの主張は正しい.
+
+				\item
+				　If $\cal{F}$ converges to p and X is a Hausdorff space, 
+				then no other point of X is a cluster point of $\cal{F}$.
+				\newline
+				　($\cal{F}$ が点 p に収束し, X がハウスドルフのとき, 
+				Xで収積点は唯一つである.)
+				\item[\underline{Proof.}]
+				　ハウスドルフ空間 X の異なるニ点は, 交わらない近傍を持つから, 
+				いかなる有向点族も異なる二点を収積点として持ち得ない. 
+				$\cal{F}$ が点 p に収束するとき, これは収積点になり, 唯一つに定まる.\qed
+			\end{enumerate}
+	\end{description}
+\end{document}
