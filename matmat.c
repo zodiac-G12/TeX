@@ -65,12 +65,16 @@ int main(void){
                 }
             }
         }
+
+        //Checking matrix is identity matrix
         for(i=0,k=0;i<n*n;i++){
             for(j=0;j<n*n;j++){
                 if(e[i][j]==1) k++;
             }
         }
         if(k==n*n) break;
+
+        //Moving place of "1" for (i,i)
         for(i=0;i<n*n;i++){
             for(j=0;j<n*n;j++){
                 if((i==j && e[i][j]!=1)||(i!=j && e[i][j]!=0)){
@@ -94,6 +98,7 @@ int main(void){
         }
     }
 
+    //Judgement times
     if(count<10){
         puts("\nE_n^-1:");
         for(i=0;i<n*n;i++){
@@ -105,12 +110,12 @@ int main(void){
         return -1;
     }
 
+    //Input state, return answer
     puts("\nPlease input now.");
     for(i=0;i<n*n;i++){
         scanf("%d", &now[i]);
         if(now[i]!=0 && now[i]!=1) return -1;
     }
-
     puts("");
     for(i=0;i<n*n;i++){
         ans=0;
